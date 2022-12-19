@@ -25,3 +25,15 @@ if x > 0:
     print("still under if")
 
 print("outside if")
+
+multiline_str = """
+abs(x) (absolute value)
+int(x) (conversion to integer)
+float(x) (conversion to floating point)
+"""
+print(multiline_str)
+
+print("Escape double quote: \"; Escape backslash: \\")
+
+my_str = "absolute value"
+print("Substring in string:", "subs" in my_str)
