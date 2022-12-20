@@ -16,3 +16,6 @@ print(f"Price: {price:.2f} $")
 
 greeting = "hello!"
 print(f"{greeting.title()[:-1]} from Maria. {len} is a function.")
+
+if greeting is None:  # comparison with None, True, False is done with `is` op
+    print("No value for greeting")
