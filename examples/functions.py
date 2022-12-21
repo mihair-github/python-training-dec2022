@@ -52,3 +52,18 @@ varargs(10, 20, 10, 40, 50)
 
 varargs(name="Ana", age=20, height=1.7)
 varargs("hello", "world", 10, 15, name="Ana", age=20)
+
+
+def return_html(tag: str, content: str):  # type hints
+    escape_chars = {
+        ord('<'): '&lt;',
+        ord('>'): '&gt;',
+        ord('"'): '&quot;',
+        ord('&'): '&amp;'
+    }
+    content = content.translate(escape_chars)
+
+    return f'<{tag}>{content}</{tag}>'
+
+
+print(return_html("b", "Ham & Eggs"))
