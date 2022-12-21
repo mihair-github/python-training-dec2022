@@ -11,7 +11,6 @@ def my_func(a):
         print("Global names (in inner's local scope):", X, my_func, MyClass)
         print("Enclosing names (in inner's local scope):", a, b, inner)
         print("Local names (in inner's local scope):", c, d, end="\n\n")
-        print()
 
     inner(4)
 
@@ -24,7 +23,10 @@ class MyClass:
     pass
 
 
-my_func(2)
+if __name__ == "__main__":  # if this module is run / sent as argument to python
+    my_func(2)
 
-print("Built-in names (in global scope):", len, int, ValueError)
-print("Global names (in global scope):", X, my_func, MyClass)
+    print("Built-in names (in global scope):", len, int, ValueError)
+    print("Global names (in global scope):", X, my_func, MyClass)
+# else:  # if this module is imported
+#     print(__name__, "was imported")
