@@ -1,3 +1,6 @@
+from decorators import print_exec_time
+
+
 def print_greeting():
     """Prints 'hello world'"""
     print("hello world")
@@ -67,3 +70,19 @@ def return_html(tag: str, content: str):  # type hints
 
 
 print(return_html("b", "Ham & Eggs"))
+
+
+@print_exec_time
+def long_fun(n):
+    cn = 0
+    for i in range(n):
+        cn = cn + i
+    return cn
+
+
+print(long_fun(100000))
+print(long_fun(100000))
+print(long_fun(100000))
+print(long_fun(100000))
+print(long_fun(100000))
+print(long_fun(100000))

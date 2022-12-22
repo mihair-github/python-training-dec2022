@@ -1,4 +1,5 @@
 import functools
+import time
 
 
 def make_pretty(func):  # func is a local variable for make_pretty
@@ -11,6 +12,15 @@ def make_pretty(func):  # func is a local variable for make_pretty
 
     return inner  # inner will replace func
 
+
+def print_exec_time(func):
+    def inner(*args, **kvargs):
+        t1 = time.time()
+        inner_result = func(*args, **kvargs)
+        t2 = time.time()
+        print(f'Function run for: {t2 - t1} s')
+        return inner_result
+    return inner
 
 @make_pretty
 def ordinary():
