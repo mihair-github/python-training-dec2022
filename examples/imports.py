@@ -1,9 +1,12 @@
-# import legb  # import module
-# import math
-#
-# legb.my_func(10)
-# print(legb.X, legb.__name__)
-# print(math.sqrt(9))
+import legb  # import module
+import math
+
+
+IMPORTS_VAR = "test"
+
+legb.my_func(10)
+print(legb.X, legb.__name__)
+print(math.sqrt(9))
 
 
 # from legb import MyClass, X  # import names from module
@@ -45,9 +48,9 @@
 # when importing packages, modules inside them are not automatically imported
 
 
-import pypackage.pymodule
-print(pypackage.pymodule.Y)
-print(pypackage.Z)
+# import pypackage.pymodule
+# print(pypackage.pymodule.Y)
+# print(pypackage.Z)
 
 
 # from pypackage import pymodule

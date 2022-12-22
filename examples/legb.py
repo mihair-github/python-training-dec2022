@@ -23,10 +23,17 @@ class MyClass:
     pass
 
 
+def func_using_imports_module():
+    import imports  # local import
+    print(imports.IMPORTS_VAR)
+
+
 if __name__ == "__main__":  # if this module is run / sent as argument to python
     my_func(2)
 
     print("Built-in names (in global scope):", len, int, ValueError)
     print("Global names (in global scope):", X, my_func, MyClass)
+
+    func_using_imports_module()
 # else:  # if this module is imported
 #     print(__name__, "was imported")

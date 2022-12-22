@@ -109,3 +109,12 @@ def build_html_v2(tag_type, tag_content):
 
 print(build_html_v2('b', 'Ham & Eggs'))
 print(build_html_v2('p', '"a < b" comparison'))
+
+
+def filter_short_words(word_list: list[str], n):
+    list_w =[]
+    for word in filter(lambda word: len(word) < n, word_list):
+        list_w.append(word)
+    return list_w
+
+filter_short_words([1, 2, 3], 10)
