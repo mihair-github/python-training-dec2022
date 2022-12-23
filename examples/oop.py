@@ -51,7 +51,7 @@ class Person:
         return self.date_of_birth > other.date_of_birth
 
     def __str__(self):
-        return f"Person {self.name} ({self.date_of_birth})"
+        return f"{self.name} ({self.date_of_birth})"
 
 
 class Student(Person):
@@ -62,7 +62,8 @@ class Student(Person):
         super().__init__(name, date_of_birth)
 
     def __str__(self):
-        return f"{self.name} ({self.date_of_birth} - {self.university})"
+        string_rep = super().__str__()
+        return f"{string_rep} - {self.university}"
 
     def get_grade(self, subject):
         return random.randint(1, 10)
@@ -100,6 +101,9 @@ if __name__ == '__main__':
     print(f"{s1.name} is {s1.age} years old and studies at {s1.university}.")
 
     print("Maths grade:", s1.get_grade("maths"))
+
+    print(p1)
+    print(s1)
 
     print("Student count:", Student.count)
     print("Person count:", Person.count)
