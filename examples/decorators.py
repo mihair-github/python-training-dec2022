@@ -13,6 +13,23 @@ def make_pretty(func):  # func is a local variable for make_pretty
     return inner  # inner will replace func
 
 
+def doubler(func):  # func is a local variable for make_pretty
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result * 2
+
+    return inner  # inner will replace func
+
+
+@make_pretty
+@doubler
+def get_sum(a, b, c):
+    return a + b + c
+# get_sum = make_pretty(doubler(get_sum))
+# get_sum = make_pretty(doubler(params)(get_sum))
+
+
 def print_exec_time(func):
     def inner(*args, **kvargs):
         t1 = time.time()
@@ -21,6 +38,7 @@ def print_exec_time(func):
         print(f'Function run for: {t2 - t1} s')
         return inner_result
     return inner
+
 
 @make_pretty
 def ordinary():
@@ -55,3 +73,6 @@ print("Decremented value:", decremented_val, end="\n\n")
 
 print(f"Decrement function's name is <{decrement.__name__}> and does "
       f"<{decrement.__doc__}>.")
+
+
+print("Sum is", get_sum(1, 2, 3))
