@@ -1,7 +1,7 @@
 class Person:
     count = 0  # class variable
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name  # instance variable
         print("inside __init__", self, id(self))
         self.increment_count()
